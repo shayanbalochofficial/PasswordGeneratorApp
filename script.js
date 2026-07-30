@@ -14,7 +14,7 @@ lengthSlider.addEventListener("input", () => {
   lengthDisplay.textContent = lengthSlider.value;
 });
 
-const generateButton = document.getElementById("generate-btn");
+const generateButton = document.getElementById("generatebtn");
 generateButton.addEventListener("click", makePassword());
 
 const uppercaseCheckbox = document.getElementById("uppercase");
@@ -58,4 +58,30 @@ function createRandomPassword(
   includeSymbols,
 ) {
   let allCharacters = "";
+
+  if (includeUppercase) {
+    allCharacters += uppercaseLetters;
+  }
+  if (includeLowercase) {
+    allCharacters += lowercaseLetters;
+  }
+  if (includeNumbers) {
+    allCharacters += numberCharacters;
+  }
+  if (includeSymbols) {
+    allCharacters += symbolCharacters;
+  }
+
+  let password = "";
+
+  for (let i = 0; i < length; i++) {
+    const randomIndex = Math.floor(Math.random() * allCharacters.length);
+    password += allCharacters[randomIndex];
+  }
+
+  return password;
 }
+const copyButton = document.getElementById("copybtn");
+const strengthBar = document.querySelector(".strengthbar");
+const strengthText = document.querySelector(".strengthcontainer p");
+const strengthLabel = document.getElementById("strengthlabel");
