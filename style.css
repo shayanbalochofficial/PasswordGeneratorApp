@@ -77,3 +77,82 @@ h1 {
   -ms-border-radius: 10px;
   -o-border-radius: 10px;
 }
+
+#copybtn {
+  color: #193446;
+  font-size: 1.1rem;
+  width: 35px;
+  height: 35px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+  transition: all 0.3s ease;
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -ms-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  border: 1px solid black;
+}
+
+#copybtn:hover {
+  color: #8f5a00;
+  border: 1px solid #8f5a00;
+}
+
+.options {
+  margin-bottom: 2rem;
+  padding: 1.5rem;
+  padding: 1.5rem;
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+  border: 1px solid #1934462c;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.option {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.option:last-child {
+  margin-bottom: 0;
+}
+
+.rangecontainer {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 60%;
+}
+
+.option label {
+  font-size: 0.9rem;
+  color: #4a5568;
+  font-weight: 500;
+}
+
+input[type="range"] {
+  height: 5px;
+  cursor: pointer;
+  flex: 1;
+}
+
+input[type="checkbox"] {
+  width: 20px;
+  height: 20px;
+  border: 2px solid #2b5876;
+  cursor: pointer;
+  outline: none;
+  appearance: none;
+}

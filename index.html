@@ -27,15 +27,17 @@
         </h1>
         <!-- password continner -->
         <div class="passwordcontainer">
-          <input type="text" readonly id="password" value="A@nya$h@yan  " />
+          <input type="text" readonly id="password" />
           <i class="far fa-copy" id="copybtn" title="Copy To Clipboard"></i>
         </div>
         <!-- options section -->
         <div class="options">
-          <label for="length">PassWord Length</label>
-          <div class="rangecontainer">
-            <input type="range" id="length" min="6" max="24" value="12" />
-            <span id="lengthvalue">12</span>
+          <div class="option">
+            <label for="length">Password Length</label>
+            <div class="rangecontainer">
+              <input type="range" id="length" min="6" max="24" value="12" />
+              <span id="lengthvalue">12</span>
+            </div>
           </div>
           <div class="option">
             <label for="uppercase">Include Uppercase</label>
