@@ -198,7 +198,7 @@ button {
   width: 100%;
   padding: 1rem;
   color: #2b5876;
-  border: none;
+  border: 2px solid #193446;
   border-radius: 10px;
   -webkit-border-radius: 10px;
   -moz-border-radius: 10px;
@@ -212,4 +212,66 @@ button {
   -moz-transition: all 0.3s;
   -ms-transition: all 0.3s;
   -o-transition: all 0.3s;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 4px 8px rgba(43, 88, 118, 0.8);
+}
+
+.strengthcontainer {
+  margin-top: 0.8rem;
+}
+
+.strengthcontainer p {
+  font-size: 0.9rem;
+  color: #4a5568;
+  margin-bottom: 0.6rem;
+  display: flex;
+  justify-content: space-between;
+  font-weight: 500;
+}
+
+#strengthlabel {
+  font-weight: 600;
+}
+
+.strengthmeter {
+  height: 10px;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+  margin-top: 0.5rem;
+  overflow: hidden;
+}
+
+.strengthbar {
+  height: 100%;
+  width: 0;
+  min-width: 5%;
+  background-color: var(--weak-color);
+  transition: all 0.3s ease;
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -ms-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+}
+
+@media (max-width: 768px) {
+  .container {
+    width: 95%;
+    padding: 1.8rem;
+  }
+
+  h1 {
+    font-size: 1.6rem;
+  }
+
+  .option label {
+    font-size: 0.9rem;
+  }
 }
