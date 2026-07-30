@@ -155,4 +155,61 @@ input[type="checkbox"] {
   cursor: pointer;
   outline: none;
   appearance: none;
+  transition: all 0.8s;
+  position: relative;
+  -webkit-transition: all 0.8s;
+  -moz-transition: all 0.8s;
+  -ms-transition: all 0.8s;
+  -o-transition: all 0.8s;
+}
+
+input[type="checkbox"]:checked {
+  background-color: #193446;
+}
+
+input[type="checkbox"]:checked::after {
+  content: "\2714";
+  position: absolute;
+  color: white;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -60%);
+  -webkit-transform: translate(-50%, -60%);
+  -moz-transform: translate(-50%, -60%);
+  -ms-transform: translate(-50%, -60%);
+  -o-transform: translate(-50%, -60%);
+  font-size: 12px;
+}
+
+#lengthvalue {
+  font-weight: 600;
+  width: 30px;
+  text-align: center;
+  background-color: #e2e8f0;
+  border-radius: 4px;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  -ms-border-radius: 4px;
+  -o-border-radius: 4px;
+  padding: 2px 5px;
+}
+
+button {
+  width: 100%;
+  padding: 1rem;
+  color: #2b5876;
+  border: none;
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+  font-size: 1rem;
+  font-weight: 600;
+  transition: all 0.3s;
+  cursor: pointer;
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  -ms-transition: all 0.3s;
+  -o-transition: all 0.3s;
 }
