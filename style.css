@@ -275,3 +275,23 @@ button {
     font-size: 0.9rem;
   }
 }
+
+nav {
+  height: 70px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  padding: 0 40px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+nav h2 {
+  color: #2b5876;
+  font-size: 1.6rem;
+  font-weight: 900;
+  margin: 0;
+}
+
+footer p {
+  padding: 23px;
+  text-align: center;
+}

@@ -15,7 +15,7 @@ lengthSlider.addEventListener("input", () => {
 });
 
 const generateButton = document.getElementById("generatebtn");
-generateButton.addEventListener("click", makePassword());
+generateButton.addEventListener("click", makePassword);
 
 const uppercaseCheckbox = document.getElementById("uppercase");
 const lowercaseCheckbox = document.getElementById("lowercase");
@@ -48,6 +48,8 @@ function makePassword() {
   );
 
   passwordInput.value = newPassword;
+
+  updateStrengthMeter(newPassword);
 }
 
 function createRandomPassword(
@@ -85,3 +87,64 @@ const copyButton = document.getElementById("copybtn");
 const strengthBar = document.querySelector(".strengthbar");
 const strengthText = document.querySelector(".strengthcontainer p");
 const strengthLabel = document.getElementById("strengthlabel");
+
+function updateStrengthMeter(password) {
+  const passwordLength = password.length;
+  const hasUppercase = /[A-Z]/.test(password);
+  const hasLowercase = /[a-z]/.test(password);
+  const hasNumbers = /[0-9]/.test(password);
+  const hasSymbols = /[!@#$%^&*()-_=+[\]{}|;:,.<>?]/.test(password);
+
+  let strengthScore = 0;
+
+  strengthScore += Math.min(passwordLength * 2, 40);
+
+  if (hasUppercase) strengthScore += 15;
+  if (hasLowercase) strengthScore += 15;
+  if (hasNumbers) strengthScore += 15;
+  if (hasSymbols) strengthScore += 15;
+
+  if (passwordLength < 8) {
+    strengthScore = Math.min(strengthScore, 40);
+  }
+
+  const safeScore = Math.max(5, Math.min(100, strengthScore));
+  strengthBar.style.width = safeScore + "%";
+
+  let strengthLabelText = "";
+  let barColor = "";
+
+  if (strengthScore < 40) {
+    barColor = "#fc0223";
+    strengthLabelText = "Weak";
+  } else if (strengthScore < 70) {
+    barColor = "#fbd38d";
+    strengthLabelText = "Medium";
+  } else {
+    barColor = "#68d391";
+    strengthLabelText = "Strong";
+  }
+
+  strengthBar.style.backgroundColor = barColor;
+  strengthLabel.textContent = strengthLabelText;
+}
+
+copyButton.addEventListener("click", () => {
+  if (!passwordInput.value) return;
+
+  navigator.clipboard
+    .writeText(passwordInput.value)
+    .then(() => showCopySuccess())
+    .catch((error) => console.log("Could not copy:", error));
+});
+
+function showCopySuccess() {
+  copyButton.classList.remove("far", "fa-copy");
+  copyButton.classList.add("fas", "fa-check");
+
+  setTimeout(() => {
+    copyButton.classList.remove("fas", "fa-check");
+    copyButton.classList.add("far", "fa-copy");
+    copyButton.style.color = "";
+  }, 1500);
+}
